@@ -4,14 +4,14 @@ body, *{
     box-sizing: border-box;
 }
 .gameBlock{
-    width: 56%;
+    width: 45%;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
 }
 .gameBlock div{
     width: calc(25% - 20px);
-    height: 12vw;
+    height: 10vw;
     margin: 10px;
     position: relative;
     padding: 10px;
