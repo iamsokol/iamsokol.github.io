@@ -34,36 +34,6 @@ a {
     .header-text:hover {
       text-decoration: underline; }
 
-.checkbox-popup {
-  display: none; }
-  .checkbox-popup:checked ~ .block-square {
-    opacity: 1; }
-    .checkbox-popup:checked ~ .block-square:before, .checkbox-popup:checked ~ .block-square:after {
-      display: block; }
-  .checkbox-popup:checked ~ .block-icons {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-
-.checkbox-more {
-  display: none; }
-  .checkbox-more ~ .block-icons-item {
-    display: none; }
-  .checkbox-more:checked ~ .block-icons .more {
-    height: 1px;
-    overflow: hidden;
-    margin-bottom: 40px;
-    width: -webkit-calc(100% - 15px);
-    width: calc(100% - 15px); }
-    .checkbox-more:checked ~ .block-icons .more ~ * {
-      display: block; }
-  .checkbox-more:checked ~ .block-icons-item {
-    display: block; }
-  .checkbox-more:checked ~ .block-icons {
-    overflow-y: scroll;
-    padding: 20px 15px 20px 30px; }
-
 .more {
   background: #ebebeb;
   text-align: center;
@@ -106,40 +76,6 @@ a {
     background: #ebebeb;
     z-index: 0; }
 
-.block-square {
-  cursor: pointer;
-  position: relative;
-  opacity: 0.55; }
-  .block-square:hover {
-    opacity: 1; }
-  .block-square:after {
-    content: '';
-    display: none;
-    border-color: transparent;
-    border-bottom-color: #fff;
-    border-style: dashed dashed solid;
-    border-width: 0 8.5px 8.5px;
-    position: absolute;
-    right: 0px;
-    top: 30px;
-    z-index: 1;
-    height: 0;
-    width: 0; }
-  .block-square:before {
-    content: '';
-    display: none;
-    border-color: transparent;
-    border-style: dashed dashed solid;
-    border-width: 0 9.5px 9.5px;
-    position: absolute;
-    right: -1px;
-    z-index: 1;
-    height: 0;
-    width: 0;
-    border-bottom-color: #ccc;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-    top: 29px; }
-
 .block-bell {
   cursor: pointer;
   width: 20px;
@@ -181,27 +117,88 @@ a {
     border: 1px solid #fff; }
     .block-icons-item:hover {
       border: 1px solid #ccc; }
-    .block-icons-item:focus {
-      border: 1px solid #fff; }
-      .block-icons-item:focus .block-icons-img {
-        border: 1px solid #0095ff; }
   .block-icons-img {
     padding: 5px;
     width: 60px;
-    height: 60px;
-    border: 1px solid #fff; }
+    height: 60px; }
   .block-icons-title {
     margin-top: 5px; }
-
-.image-square {
-  width: 16px; }
 
 .image-bell {
   width: 14px; }
 
 .image-user {
+  display: block;
   cursor: pointer;
   width: 32px;
   height: 32px;
   -webkit-border-radius: 32px;
           border-radius: 32px; }
+
+.checkbox-popup {
+  cursor: pointer;
+  position: relative;
+  background: url(../img/square.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 15px 15px;
+          background-size: 15px;
+  height: 25px;
+  width: 25px;
+  opacity: 0.55;
+  -webkit-appearance: none; }
+  .checkbox-popup:hover {
+    opacity: 1; }
+  .checkbox-popup ~ .block-icons-item {
+    display: none; }
+  .checkbox-popup:checked {
+    opacity: 1; }
+    .checkbox-popup:checked ~ .arrow {
+      display: block; }
+    .checkbox-popup:checked ~ .block-icons {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+
+.checkbox-more {
+  display: none; }
+  .checkbox-more:checked ~ .block-icons .more {
+    height: 1px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    width: -webkit-calc(100% - 15px);
+    width: calc(100% - 15px); }
+    .checkbox-more:checked ~ .block-icons .more ~ * {
+      display: block; }
+  .checkbox-more:checked ~ .block-icons-item {
+    display: block; }
+  .checkbox-more:checked ~ .block-icons {
+    overflow-y: scroll;
+    padding: 20px 15px 20px 30px; }
+
+.arrow {
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: 97px;
+  height: auto; }
+  .arrow:after, .arrow:before {
+    content: '';
+    display: block;
+    border-color: transparent;
+    border-style: dashed dashed solid;
+    position: absolute;
+    z-index: 1;
+    height: 0;
+    width: 0; }
+  .arrow:after {
+    border-bottom-color: #fff;
+    border-width: 0 8.5px 8.5px;
+    right: 3px;
+    top: 34px; }
+  .arrow:before {
+    border-bottom-color: #ccc;
+    border-width: 0 9.5px 9.5px;
+    right: 2px;
+    top: 33px; }
