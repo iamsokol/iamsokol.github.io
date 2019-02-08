@@ -35,19 +35,6 @@ a {
   .header-text:hover {
     text-decoration: underline; }
 
-.more {
-  background: #ebebeb;
-  text-align: center;
-  width: 100%;
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  left: 0; }
-  .more:hover {
-    background: #c1c1c1; }
-  .more ~ * {
-    display: none; }
-
 .more-button {
   display: -webkit-box;
   display: -webkit-flex;
@@ -57,7 +44,8 @@ a {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  padding-top: 30px; }
+  padding-top: 30px;
+  position: relative; }
 
 .more-link {
   width: 100%;
@@ -102,12 +90,13 @@ a {
       -ms-flex-pack: start;
           justify-content: start;
   width: 320px;
-  height: 490px;
+  height: 480px;
   padding: 20px 30px;
   background: #fff;
   border: 1px solid #ccc;
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow: overlay; }
 
 .block-icons-item {
   cursor: pointer;
@@ -165,24 +154,35 @@ a {
       display: flex; }
 
 .checkbox-more {
-  display: none; }
-  .checkbox-more:checked ~ .block-icons .more {
+  background: #ebebeb;
+  width: -webkit-calc(100% + 60px);
+  width: calc(100% + 60px);
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  -webkit-appearance: none; }
+  .checkbox-more:after {
+    content: 'More';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px; }
+  .checkbox-more:hover {
+    background: #c1c1c1; }
+  .checkbox-more ~ * {
+    display: none; }
+  .checkbox-more:checked {
+    width: 100%;
     height: 1px;
-    overflow: hidden;
-    margin-bottom: 40px;
-    width: -webkit-calc(100% - 60px);
-    width: calc(100% - 60px);
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%); }
-    .checkbox-more:checked ~ .block-icons .more ~ * {
+    font-size: 0;
+    left: 0;
+    outline: none; }
+    .checkbox-more:checked ~ .block-icons-item {
       display: block; }
-  .checkbox-more:checked ~ .block-icons-item {
-    display: block; }
-  .checkbox-more:checked ~ .block-icons {
-    overflow-y: scroll;
-    padding: 20px 15px 20px 30px; }
 
 .arrow {
   display: none;
