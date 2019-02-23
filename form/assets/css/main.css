@@ -67,9 +67,24 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
+input[type=checkbox]:not(.terms):focus + label,
 input[type=radio]:focus + label {
   -webkit-filter: grayscale(1);
-          filter: grayscale(1); }
+          filter: grayscale(1);
+  position: relative; }
+  input[type=checkbox]:not(.terms):focus + label:before,
+  input[type=radio]:focus + label:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    border: 8px solid #76a7e1;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    width: -webkit-calc(100% - 8px);
+    width: calc(100% - 8px);
+    height: -webkit-calc(100% - 8px);
+    height: calc(100% - 8px); }
 
 input[type=number] {
   -moz-appearance: textfield; }
@@ -264,7 +279,7 @@ p {
           border-radius: 5px;
   border: 1px solid #6e768f;
   color: #6e768f; }
-  .sm-button:hover {
+  .sm-button:active, .sm-button:focus, .sm-button:hover {
     opacity: 1; }
   .sm-button .fa {
     padding-right: 15px;
@@ -630,6 +645,14 @@ p {
   .title + .subtitle {
     display: none; } }
 
+.document .file {
+  width: 0px; }
+
+.document .file:focus + label {
+  border: 1px solid #76a7e1;
+  background: #fff;
+  opacity: 1; }
+
 .document .sm-button {
   margin-bottom: 50px; }
 
@@ -681,12 +704,21 @@ p {
     .document .document-in div .trash {
       opacity: 0.5;
       border: none;
-      background: none; }
+      background: none;
+      cursor: pointer; }
       .document .document-in div .trash:hover, .document .document-in div .trash:focus, .document .document-in div .trash:active {
         opacity: 1; }
   .document .document-in .document-in-head p {
     font-weight: bold;
     text-transform: uppercase; }
+
+.select-trash {
+  background: none;
+  border: none;
+  color: #6e768f;
+  opacity: 0.5; }
+  .select-trash:hover, .select-trash:active, .select-trash:focus {
+    opacity: 1; }
 
 .language fieldset {
   font-size: 0; }
@@ -981,8 +1013,6 @@ p {
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between; } }
-  .payment-type input {
-    display: none; }
   .payment-type label {
     width: 25%;
     cursor: pointer;
