@@ -219,6 +219,14 @@ input:checked + label:not(.agree) {
 p {
   color: #a5abc5; }
 
+.logo img {
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  border: 10px solid #eceef4; }
+
+.logo img:hover {
+  border: 10px solid red; }
+
 @media (max-width: 770px) {
   .logo {
     -webkit-box-ordinal-group: 2;
@@ -974,6 +982,12 @@ p {
   width: 25%;
   padding: 0 5% 0 80px;
   font-style: inherit; }
+  .footer-item img {
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    border: 10px solid #444a62; }
+    .footer-item img:hover {
+      border: 10px solid red; }
   .footer-item a:hover {
     color: #fff; }
     .footer-item a:hover .fa {
