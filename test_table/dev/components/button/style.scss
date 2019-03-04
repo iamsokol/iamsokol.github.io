@@ -1,0 +1,47 @@
+%btn {
+  font-size: 13px;
+  line-height: 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+@mixin btn-color($fontColor, $borderColor, $firstColor, $secondColor) {
+  color: $fontColor;
+  border: 1px solid $borderColor;
+  background: linear-gradient(to bottom, $firstColor 0%,$secondColor 100%);
+  &:hover{
+    background: $firstColor;
+  }
+  &:active{
+    outline: none;
+    background: linear-gradient(to top, $firstColor 0%,$secondColor 100%);
+  }
+  &:focus{
+    outline: none;
+    background: $firstColor;
+    box-shadow: 0px 0px 10px 0px $firstColor;
+  }
+  &:disabled{
+    background: $firstColor;
+    opacity: 0.5;
+  }
+  @media (hover: none) and (pointer: coarse) {
+    &:hover{
+      background: linear-gradient(to bottom, $firstColor 0%,$secondColor 100%);
+    }
+  }
+}
+
+.btn{
+  &_orange{
+    @extend %btn;
+    @include btn-color(#fff, #ff742d, #ffa036, #ff742d);
+  }
+  &_grey{
+    @extend %btn;
+    @include btn-color(#3c3c3c, #c1c1c1, #f7f7f7, #ececec);
+  }
+}

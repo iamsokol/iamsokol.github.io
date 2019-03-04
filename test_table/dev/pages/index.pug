@@ -1,0 +1,11 @@
+extends ../templates/default/index.pug
+include ../components/document-list/index
+
+block title
+  | PDFfiller
+
+block content
+  main.main
+    section.main-list
+      each val, index in {1:'08/08/2014', 2:'12/04/2015', 3:'05/03/2016', 4:'04/10/2017', 5:'01/02/2019'}
+        +list-item('name_of_document' + index, 'Last Edited: ' + val)

@@ -1,0 +1,9 @@
+include ../button/index
+
+mixin list-item(text1, text2)
+  div.main-list__item
+    img.main-list__img(src="/img/document.jpg" alt="document")
+    div.main-list__text
+      h3.main-list__text_title= text1
+      p.main-list__text_description= text2
+    +btn('main-list__btn btn_orange', 'View Document')
