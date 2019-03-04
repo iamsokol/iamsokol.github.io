@@ -47,6 +47,8 @@
 }
 .main-list__btn{
   width: 140px;
-  margin: 10px 0 0;
   flex-grow: 2;
+  @media(max-width: 456px){
+    margin: 10px 0 0;
+  }
 }
